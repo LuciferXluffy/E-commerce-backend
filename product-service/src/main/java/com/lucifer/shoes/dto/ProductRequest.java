@@ -1,10 +1,6 @@
 package com.lucifer.shoes.dto;
 
 
-import com.lucifer.shoes.model.Brand;
-import com.lucifer.shoes.model.Category;
-import com.lucifer.shoes.model.Skus;
-import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;

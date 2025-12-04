@@ -2,9 +2,7 @@ package com.lucifer.shoes.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.boot.autoconfigure.web.WebProperties;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Getter
