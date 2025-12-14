@@ -13,9 +13,9 @@ import lombok.*;
 @Data
 public class UserRequest {
 
-    private String firstName;
+    private String firstname;
 
-    private String lastName;
+    private String lastname;
 
     private String email;
 

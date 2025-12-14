@@ -1,9 +1,13 @@
 package com.lucifer.shoes.controller;
 
 import com.lucifer.shoes.dto.UserRequest;
+import com.lucifer.shoes.model.AuthResponse;
 import com.lucifer.shoes.service.RegisterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,15 +19,11 @@ public class RegisterController {
     private final RegisterService registerService;
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public String AddUser(@RequestBody UserRequest userRequest) {
-        registerService.addUser(userRequest);
-        return "User Added Succesfully";
+    public ResponseEntity<AuthResponse> registerUser(@RequestBody UserRequest userRequest){
+        AuthResponse token = registerService.registerUser(userRequest);
+
+        return new ResponseEntity<>(token , HttpStatus.CREATED);
     }
 
-    @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public String working() {
-        return "Api is Working";
-    }
+
 }
